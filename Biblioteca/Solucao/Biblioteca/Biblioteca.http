@@ -1,0 +1,67 @@
+@base_url = http://localhost:5112
+@autorId = 115f58a2-12c2-4ade-beb4-a068028942ad
+
+### Cadastrar Lista de Autores
+POST {{base_url}}/api/autor/cadastrar/lista
+Content-Type: application/json
+
+[
+    {
+        "Nome": "Gabriel García Márquez",
+        "Nacionalidade": "Colombiano"
+    },
+    {
+        "Nome": "Haruki Murakami",
+        "Nacionalidade": "Japonês"
+    },
+    {
+        "Nome": "Chimamanda Ngozi Adichie",
+        "Nacionalidade": "Nigeriana"
+    },
+    {
+        "Nome": "Virginia Woolf",
+        "Nacionalidade": "Britânica"
+    },
+    {
+        "Nome": "Jorge Luis Borges",
+        "Nacionalidade": "Argentino"
+    },
+    {
+        "Nome": "Fyodor Dostoevsky",
+        "Nacionalidade": "Russo"
+    },
+    {
+        "Nome": "Isabel Allende",
+        "Nacionalidade": "Chilena"
+    },
+    {
+        "Nome": "Toni Morrison",
+        "Nacionalidade": "Americana"
+    },
+    {
+        "Nome": "José Saramago",
+        "Nacionalidade": "Português"
+    },
+    {
+        "Nome": "Albert Camus",
+        "Nacionalidade": "Francês"
+    }
+]
+
+### Listar autores
+GET {{base_url}}/api/autor/listar
+
+### Buscar autor
+GET {{base_url}}/api/autor/buscar/{{autorId}}
+
+### Alterar autor
+PUT {{base_url}}/api/autor/alterar/{{autorId}}
+Content-Type: application/json
+
+{
+    "Nome": "Margaret Atwood",
+    "Nacionalidade": "Canadense"
+}
+
+### Deletar autor
+DELETE {{base_url}}/api/autor/deletar/{{autorId}}

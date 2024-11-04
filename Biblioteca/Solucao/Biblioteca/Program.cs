@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 builder.Services.AddDbContext<AppDbContext>();
+var app = builder.Build();
 
-app.MapGet("/", () => $"API de biblioteca");
+app.MapGet("/", () => "API de biblioteca");
 
 app.MapPost("/api/autor/cadastrar", ([FromBody] Autor autor, [FromServices] AppDbContext ctx) =>
 {
@@ -60,6 +60,9 @@ app.MapPut("/api/autor/alterar/{id}", ([FromRoute] string id, [FromBody] Autor a
     autor.Nome = autorAlterado.Nome;
     autor.Nacionalidade = autorAlterado.Nacionalidade;
 
+    ctx.TabelaAutores.Update(autor);
+    ctx.SaveChanges();
+
     return Results.Ok(autor);
 });
 
@@ -73,7 +76,7 @@ app.MapDelete("/api/autor/deletar/{id}", ([FromRoute] string id, [FromServices] 
 
     ctx.TabelaAutores.Remove(autor);
     ctx.SaveChanges();
-    return Results.Ok();
+    return Results.NoContent();
 });
 
 app.MapPost("/api/emprestimo/cadastrar", ([FromBody] Emprestimo emprestimo, [FromServices] AppDbContext ctx) =>
@@ -130,6 +133,9 @@ app.MapPut("/api/emprestimo/alterar/{id}", ([FromRoute] string id, [FromBody] Em
     emprestimo.DataDevolucao = emprestimoAlterado.DataDevolucao;
     emprestimo.Leitor = emprestimoAlterado.Leitor;
     emprestimo.LivroId = emprestimoAlterado.LivroId;
+
+    ctx.TabelaEmprestimos.Update(emprestimo);
+    ctx.SaveChanges();
 
     return Results.Ok(emprestimo);
 });
@@ -203,6 +209,9 @@ app.MapPut("/api/livro/alterar/{id}", ([FromRoute] string id, [FromBody] Livro l
     livro.Autor = livroAlterado.Autor;
     livro.Genero = livroAlterado.Genero;
     livro.Titulo = livroAlterado.Titulo;
+
+    ctx.TabelaLivros.Update(livro);
+    ctx.SaveChanges();
 
     return Results.Ok(livro);
 });
