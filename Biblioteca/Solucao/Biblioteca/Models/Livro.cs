@@ -4,5 +4,5 @@ public class Livro
     public required string Titulo { get; set; }
     public required string Genero { get; set; }
     public int AnoPublicacao { get; set; }
-    public Autor autor {get; set; } = null!;
+    public Autor Autor {get; set; } = null!;
 }

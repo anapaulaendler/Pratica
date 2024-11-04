@@ -126,3 +126,4 @@ C:\Users\Usuário\OneDrive\Documentos\Prática\Biblioteca\Solucao\Biblioteca\obj
 C:\Users\Usuário\OneDrive\Documentos\Prática\Biblioteca\Solucao\Biblioteca\obj\Debug\net8.0\Biblioteca.pdb
 C:\Users\Usuário\OneDrive\Documentos\Prática\Biblioteca\Solucao\Biblioteca\obj\Debug\net8.0\Biblioteca.genruntimeconfig.cache
 C:\Users\Usuário\OneDrive\Documentos\Prática\Biblioteca\Solucao\Biblioteca\obj\Debug\net8.0\ref\Biblioteca.dll
+C:\Users\Usuário\OneDrive\Documentos\Prática\Biblioteca\Solucao\Biblioteca\obj\Debug\net8.0\Biblioteca.sourcelink.json
